@@ -28,6 +28,19 @@ npm run dev
 ```js
 import { Select } from "hrnet-select-p14";
 
+const handleStateSelect = (state) => {
+    setFormData({ ...formData, state }); 
+    setSelectedState(state);
+};
+
+<Select 
+    options={states}
+    onChange={handleStateSelect}
+    defaultValue={selectedState}
+    placeholder="Select states"
+    required
+/>
+
   
 />
 ```
@@ -41,3 +54,5 @@ import { Select } from "hrnet-select-p14";
 | placeholder | String |  | Placeholder du Select |
 | options | String | - | Liste des options du Select. Doit être un tableau d'objets de la forme `{id: '', name: ''}`  |
 | onChange | (value: String) => void | - | La fonction qui est levée au changement d'option et qui remonte l'id de la valeur sélectionnée |
+|defaultValue | String | - | Valeur par défaut du Select |
+| required | boolean |  true | Indique si la sélection est requise |
